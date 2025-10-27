@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GARDEN BY CALICO - Dipinti Floreali</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage: #b5cbb7;
+      --cream: #fdfaf6;
+      --blush: #e7cfc7;
+      --moss: #8da78e;
+      --sand: #f0eae0;
+      --text-dark: #3a3a3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--sand);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      letter-spacing: 0.3rem;
+      color: var(--moss);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 2px;
+      background-color: var(--blush);
+      margin: 1rem auto 0;
+    }
+
+    nav {
+      margin-top: 2rem;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--moss);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--moss);
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #555;
+      max-width: 750px;
+      margin: 0 auto 4rem;
+      font-style: italic;
+    }
+
+    /* SLIDER */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      height: 70vh;
+      margin: 0 auto 5rem;
+      overflow: hidden;
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(95%);
+    }
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 1.5rem;
+    }
+
+    .slider-buttons button {
+      background-color: rgba(255,255,255,0.6);
+      border: none;
+      color: var(--moss);
+      font-size: 2.2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .slider-buttons button:hover {
+      background-color: rgba(255,255,255,0.9);
+      transform: scale(1.1);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .artwork {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .artwork:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .artwork img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      filter: brightness(97%);
+    }
+
+    .artwork-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin: 1rem 1.5rem 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .artwork-price {
+      color: var(--moss);
+      font-style: italic;
+      margin: 0 1.5rem 1.5rem;
+    }
+
+    .story-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 2;
+    }
+
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--sand);
+      color: #999;
+      font-size: 0.95rem;
+      letter-spacing: 0.05rem;
+    }
+
+    button, input, textarea {
+      font-family: 'Lora', serif;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .slide, .slider-container { height: 50vh; }
+      nav a { display: block; margin: 0.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GARDEN BY CALICO</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#storia">La Mia Storia</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <p class="intro-text">
+      Una collezione di dipinti floreali dove natura e arte si incontrano in un dialogo armonioso di colori e forme.
+    </p>
+
+    <!-- SLIDER -->
+    <div class="slider-container">
+      <div class="slides">
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1473186505569-9c61870c11f9?auto=format&fit=crop&w=1600&q=80');"></div>
+      </div>
+      <div class="slider-buttons">
+        <button id="prev">❮</button>
+        <button id="next">❯</button>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Petali di Primavera">
+        <h3 class="artwork-title">Petali di Primavera</h3>
+        <p class="artwork-price">€ 450</p>
+      </div>
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="Rosa Selvatica">
+        <h3 class="artwork-title">Rosa Selvatica</h3>
+        <p class="artwork-price">€ 520</p>
+      </div>
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Campo di Girasoli">
+        <h3 class="artwork-title">Campo di Girasoli</h3>
+        <p class="artwork-price">€ 680</p>
+      </div>
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=800&q=80" alt="Tulipani al Tramonto">
+        <h3 class="artwork-title">Tulipani al Tramonto</h3>
+        <p class="artwork-price">€ 390</p>
+      </div>
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Giardino Segreto">
+        <h3 class="artwork-title">Giardino Segreto</h3>
+        <p class="artwork-price">€ 750</p>
+      </div>
+      <div class="artwork">
+        <img src="https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=800&q=80" alt="Loto Notturno">
+        <h3 class="artwork-title">Loto Notturno</h3>
+        <p class="artwork-price">€ 620</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="storia">
+    <h2>La Mia Storia</h2>
+    <div class="story-content">
+      <p>Il mio viaggio nell'arte floreale è iniziato nei giardini di mia nonna, dove ho imparato a vedere la bellezza nelle piccole cose: un petalo che cade, la rugiada su una foglia, i colori che cambiano con la luce.</p>
+      <p>Ogni dipinto è un omaggio alla natura e alla sua capacità di rinnovarsi. Lavoro principalmente con tecniche miste su tela, cercando di catturare non solo l'aspetto visivo dei fiori, ma anche la loro essenza emotiva.</p>
+      <p>Garden by Calico nasce dal desiderio di condividere questa passione e portare un po’ di serenità nelle case di chi ama l’arte e la natura.</p>
+    </div>
+  </section>
+
+  <section id="contatti">
+    <h2>Contatti</h2>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="messaggio">Messaggio</label>
+        <textarea id="messaggio" required></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Garden by Calico. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Slider
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    let index = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }, 7000);
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Grazie per il tuo messaggio! Ti risponderò presto.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
