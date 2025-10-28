@@ -200,6 +200,224 @@
       line-height: 2;
     }
 
+    /* CONTATTI - NUOVA VERSIONE */
+    .contact {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--moss) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="50" cy="50" r="2" fill="white"/></svg>') repeat;
+    }
+
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    /* Informazioni Contatto */
+    .contact-info {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .contact-info h3 {
+      color: var(--moss);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--sand);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--moss);
+    }
+
+    .contact-method:hover {
+      transform: translateX(5px);
+      background: var(--cream);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--moss);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-details p {
+      color: var(--text-dark);
+      opacity: 0.8;
+    }
+
+    /* Form Contatto */
+    .contact-form-wrapper {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .contact-form-wrapper h3 {
+      color: var(--moss);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      color: var(--text-dark);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--sand);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: var(--cream);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--moss);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(141, 167, 142, 0.1);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      padding: 1.25rem 2rem;
+      background: linear-gradient(135deg, var(--moss) 0%, var(--text-dark) 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .contact-form button:hover::before {
+      left: 100%;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Social Links */
+    .contact-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background: var(--moss);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--text-dark);
+      transform: translateY(-3px);
+    }
+
     footer {
       background-color: #fff;
       text-align: center;
@@ -218,6 +436,27 @@
       h1 { font-size: 2.5rem; }
       .slide, .slider-container { height: 50vh; }
       nav a { display: block; margin: 0.5rem 0; }
+      
+      /* Contatti Responsive */
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .contact-info,
+      .contact-form-wrapper {
+        padding: 2rem;
+      }
+      
+      .contact-method {
+        padding: 0.75rem;
+      }
+      
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -289,27 +528,80 @@
     <div class="story-content">
       <p>Il mio viaggio nell'arte floreale è iniziato nei giardini di mia nonna, dove ho imparato a vedere la bellezza nelle piccole cose: un petalo che cade, la rugiada su una foglia, i colori che cambiano con la luce.</p>
       <p>Ogni dipinto è un omaggio alla natura e alla sua capacità di rinnovarsi. Lavoro principalmente con tecniche miste su tela, cercando di catturare non solo l'aspetto visivo dei fiori, ma anche la loro essenza emotiva.</p>
-      <p>Garden by Calico nasce dal desiderio di condividere questa passione e portare un po’ di serenità nelle case di chi ama l’arte e la natura.</p>
+      <p>Garden by Calico nasce dal desiderio di condividere questa passione e portare un po' di serenità nelle case di chi ama l'arte e la natura.</p>
     </div>
   </section>
 
-  <section id="contatti">
+  <!-- NUOVA SEZIONE CONTATTI -->
+  <section id="contatti" class="contact">
     <h2>Contatti</h2>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" required>
+    <div class="contact-container">
+      <!-- Informazioni Contatto -->
+      <div class="contact-info">
+        <h3>Informazioni di Contatto</h3>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>calico@gardenart.com</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">📞</div>
+            <div class="contact-details">
+              <h4>Telefono</h4>
+              <p>+39 123 456 7890</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">📍</div>
+            <div class="contact-details">
+              <h4>Studio</h4>
+              <p>Via dei Fiori, 123<br>Milano, Italia</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-details">
+              <h4>Orari</h4>
+              <p>Lun-Ven: 9:00-18:00<br>Sabato: 10:00-14:00</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="contact-social">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Facebook">👤</a>
+          <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
+
+      <!-- Form Contatto -->
+      <div class="contact-form-wrapper">
+        <h3>Invia un Messaggio</h3>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="nome">Nome e Cognome</label>
+            <input type="text" id="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono (opzionale)</label>
+            <input type="tel" id="telefono">
+          </div>
+          <div class="form-group">
+            <label for="messaggio">Il Tuo Messaggio</label>
+            <textarea id="messaggio" placeholder="Raccontami cosa ti piace o se hai domande specifiche su un'opera..." required></textarea>
+          </div>
+          <button type="submit">Invia Messaggio</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" required></textarea>
-      </div>
-      <button type="submit">Invia</button>
-    </form>
+    </div>
   </section>
 
   <footer>
@@ -353,3 +645,4 @@
   </script>
 </body>
 </html>
+
